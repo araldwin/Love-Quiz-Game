@@ -104,12 +104,20 @@ def ask_user_option():
 
 
 
-# def check_user_answer():
+def check_user_answer():
 
-#     """
-#     6. if user input is valid check input with correct answer
-#     7. if user input == correct_option of the question then increment score
-#     """
+    """
+     6. if user input is valid check input with correct answer
+    7. if user input == correct_option of the question then increment score
+    """
+
+    if answer == correct_answer:
+        score += 1
+        return True
+    else:
+        return False
+
+    
 
 
 # def display_question_result():
@@ -134,6 +142,6 @@ def main():
     for question in QUESTIONS:
         display_question(question)
         answer = ask_user_option()
-
+        correct_answer = question['correct_option']
 
 main()
