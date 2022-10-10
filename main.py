@@ -1,3 +1,11 @@
+#importing modules
+from pyfiglet import figlet_format
+from termcolor import colored
+
+ascii_art = figlet_format('WELCOME')
+colored_ascii = colored(ascii_art, 'green')
+print(colored_ascii)
+
 name = input('Please enter your username: ')
 
 while True:
@@ -129,7 +137,7 @@ def display_question_result(question_result, correct_answer):
 
 
 def check_and_display_final_score():
-    """if all the question is answered 
+    """if all the question is answered
        display the total score of the user
     """
     total_of_questions = len(QUESTIONS)
