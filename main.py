@@ -89,8 +89,8 @@ def display_question(q):
 
 def ask_user_option():
     """
-       3. ask user for input 
-       4. validate user input 
+       3. ask user for input
+       4. validate user input
        5. if user input is invalid then ask user for input again
     """
     while True:
@@ -103,9 +103,7 @@ def ask_user_option():
         return answer
 
 
-
 def check_user_answer():
-
     """
      6. if user input is valid check input with correct answer
     7. if user input == correct_option of the question then increment score
@@ -119,12 +117,19 @@ def check_user_answer():
 
 
 def display_question_result():
-
      """
      8. display message to user
      9. increment questionIndex
      """
 
+     if question_result == True:
+        print('Correct!')
+        print(f'Your current score is {score}.')
+    else:
+        print('Ooops! That was incorrect!!!')
+        print(f'The correct answer is {correct_answer}.')
+        print(f'Your current score is {score}.')
+    questionIndex += 1
 
 
 
@@ -144,5 +149,6 @@ def main():
         answer = ask_user_option()
         correct_answer = question['correct_option']
         correct_incorrect = check_user_answer(answer, correct_answer)
+        display_question_result(correct_incorrect, correct_answer)
 
 main()
