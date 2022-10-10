@@ -117,12 +117,13 @@ def check_user_answer():
 
 
 def display_question_result():
-     """
+    
+    """
      8. display message to user
      9. increment questionIndex
      """
 
-     if question_result == True:
+    if question_result == True:
         print('Correct!')
         print(f'Your current score is {score}.')
     else:
@@ -133,8 +134,13 @@ def display_question_result():
 
 
 
-# def check_and_display_final_score():
-#  # if questionIndex == size of the QUESTIONS array then display final score of the user and exit
+def check_and_display_final_score():
+  # if questionIndex == size of the QUESTIONS array then display final score of the user and exit
+    
+    total_of_questions = len(QUESTIONS)
+    if questionIndex == total_of_questions:
+        print(f'Final score: {score} / {total_of_questions}
+
 
 
 # def play_again():
@@ -150,5 +156,6 @@ def main():
         correct_answer = question['correct_option']
         correct_incorrect = check_user_answer(answer, correct_answer)
         display_question_result(correct_incorrect, correct_answer)
+        check_and_display_final_score()
 
 main()
