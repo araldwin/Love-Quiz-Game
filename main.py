@@ -97,7 +97,7 @@ def ask_user_option():
             print('Choose your answer (1, 2, 3, or 4,)?')
         else:
             break
-        return answer
+    return answer
 
 
 def check_user_answer(answer, correct_answer):
@@ -105,6 +105,7 @@ def check_user_answer(answer, correct_answer):
     is correct answer
     """
     if answer == correct_answer:
+        global score
         score += 1
         return True
     else:
