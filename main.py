@@ -80,8 +80,8 @@ score = 0
 
 def display_question(q):
     """
-        1. display question to the user
-        2. display options to the user
+    display question and option
+    to the user.
     """
     print(q['question'])
     print(q['options'])
@@ -162,8 +162,7 @@ def main():
         correct_incorrect = check_user_answer(answer, correct_answer)
         display_question_result(correct_incorrect, correct_answer)
         check_and_display_final_score()
-
-    main()
+main()
 
 while play_again():
     main()
