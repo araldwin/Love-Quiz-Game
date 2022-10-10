@@ -89,7 +89,7 @@ def display_question(q):
 
 def ask_user_option():
     """
-       3. ask user for in put 
+       3. ask user for input 
        4. validate user input 
        5. if user input is invalid then ask user for input again
     """
