@@ -94,7 +94,7 @@ def ask_user_option():
        5. if user input is invalid then ask user for input again
     """
     while True:
-        answer = input('Enter asnwer (1 - 4): ')
+        answer = input('Enter answer (1 - 4): ')
         if answer != ('1 - 4'):
             print('INVALID INPUT')
             print('Choose your answer (1, 2, 3, or 4,)?')
@@ -127,14 +127,13 @@ def ask_user_option():
 # def play_again():
 # # ask user to quit or play again
 
-
 def main():
     """
     create loop for all the function above
     """
     for question in QUESTIONS:
         display_question(question)
-        asnwer = ask_user_option()
+        answer = ask_user_option()
 
 
 main()
