@@ -2,13 +2,17 @@
 from pyfiglet import figlet_format
 from termcolor import colored
 
+import time
+
 ascii_art = figlet_format('WELCOME')
 colored_ascii = colored(ascii_art, 'green')
 print(colored_ascii)
 
+time.sleep(1)
 name = input('Please enter your username: ')
 
 while True:
+    time.sleep(1)
     print()
     print('Hello ' + name + '!, are you ready to answer the quiz?!')
     print()
@@ -18,17 +22,21 @@ while True:
     if cont == "yes":
         print()
         print('-----------------------------------------------------------------')
+        time.sleep(1)
         print()
         print('awesome!...')
         print()
+        time.sleep(2)
         print('-----------------------------------------------------------------')
         print()
         print("Proceeding to the first question...")
         print()
+        time.sleep(2)
         break
     else:
         pass
-
+    time.sleep(1)
+    
 QUESTIONS = [{
     'question': 'In which Italian city can you find the Colosseum?',
     'options': '1. Venice\n2. Rome\n3. Naples\n4. Milan',
