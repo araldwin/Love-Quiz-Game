@@ -84,6 +84,7 @@ def display_question(q):
         2. display options to the user
     """
     print(q['question'])
+    print(q['options'])
     
     
 
