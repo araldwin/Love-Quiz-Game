@@ -123,6 +123,7 @@ def display_question_result(question_result, correct_answer):
         print('Ooops! That was incorrect!!!')
         print(f'The correct answer is {correct_answer}.')
         print(f'Your current score is {score}.')
+    global  questionIndex
     questionIndex += 1
 
 
