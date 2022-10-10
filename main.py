@@ -143,8 +143,16 @@ def check_and_display_final_score():
 
 
 
-# def play_again():
-# # ask user to quit or play again
+def play_again():
+
+ # ask user to quit or play again
+    quiz_again = input("Do you want to play again? (yes or no): ")
+    quiz_again = quiz_again.upper()
+
+    if quiz_again == "YES":
+        return True
+    else:
+        return False
 
 def main():
     """
@@ -158,4 +166,10 @@ def main():
         display_question_result(correct_incorrect, correct_answer)
         check_and_display_final_score()
 
-main()
+    main()
+
+while play_again():
+    main()
+
+print("'Share your knowledge. It is a way to achieve immortality — Dalai Lama'")
+
