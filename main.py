@@ -146,14 +146,23 @@ def display_question_result(question_result, correct_answer):
        increment the question index
     """
 
-    if question_result == True:
+    if question_result:
+        print('-------------------------------------------------------------')
+        time.sleep(.5)
         print('Correct!')
+        time.sleep(1)
         print(f'Your current score is {score}.')
     else:
+        time.sleep(2)
+        print('--------------------------------------------------------------')
         print('Ooops! That was incorrect!!!')
+        print('--------------------------------------------------------------')
+        time.sleep(2)
         print(f'The correct answer is {correct_answer}.')
+        time.sleep(2)
+        print('--------------------------------------------------------------')
         print(f'Your current score is {score}.')
-    global  questionIndex
+    global questionIndex
     questionIndex += 1
 
 
@@ -163,8 +172,13 @@ def check_and_display_final_score():
     """
     total_of_questions = len(QUESTIONS)
     if questionIndex == total_of_questions:
+        time.sleep(2)
+        print('--------------------------------------------------------------')
+        print()
         print(f'Final score: {score} / {total_of_questions}')
-
+        print()
+        print('--------------------------------------------------------------')
+        print()
 
 
 def play_again():
