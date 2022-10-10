@@ -79,23 +79,20 @@ score = 0
 
 
 def display_question(q):
-    """
-    display question and option
-    to the user.
+    """display question and option
+       to the user.
     """
     print(q['question'])
     print(q['options'])
 
 
 def ask_user_option():
-    """
-       3. ask user for input
-       4. validate user input
-       5. if user input is invalid then ask user for input again
+    """asked for user input and validate, if user input
+    is invalid ask for user input again
     """
     while True:
         answer = input('Enter answer (1 - 4): ')
-        if answer != ('1 - 4'):
+        if answer not in ('1', '2', '3', '4'):
             print('INVALID INPUT')
             print('Choose your answer (1, 2, 3, or 4,)?')
         else:
