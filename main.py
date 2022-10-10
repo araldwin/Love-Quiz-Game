@@ -133,13 +133,10 @@ def display_question_result():
     questionIndex += 1
 
 
-
 def check_and_display_final_score():
-  # if questionIndex == size of the QUESTIONS array then display final score of the user and exit
-    
     total_of_questions = len(QUESTIONS)
     if questionIndex == total_of_questions:
-        print(f'Final score: {score} / {total_of_questions}
+        print(f'Final score: {score} / {total_of_questions}')
 
 
 
