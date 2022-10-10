@@ -98,8 +98,14 @@ def display_question(q):
     """display question and option
        to the user.
     """
+    time.sleep(1)
+    print('-----------------------------------------------------------------')
+    print()
     print(q['question'])
+    print()
+    time.sleep(2)
     print(q['options'])
+    print()
 
 
 def ask_user_option():
@@ -107,10 +113,18 @@ def ask_user_option():
        is invalid ask for user input again
     """
     while True:
+        time.sleep(1)
         answer = input('Enter answer (1 - 4): ')
+        print()
         if answer not in ('1', '2', '3', '4'):
+            time.sleep(2)
+            print('----------------------------------------------------------')
             print('INVALID INPUT')
-            print('Choose your answer (1, 2, 3, or 4,)?')
+            print('----------------------------------------------------------')
+            time.sleep(1)
+            print()
+            print('Choose your answer (1, 2, 3, or 4)?')
+            print()
         else:
             break
     return answer
@@ -124,9 +138,8 @@ def check_user_answer(answer, correct_answer):
         global score
         score += 1
         return True
-    else:
+    elif answer != correct_answer:
         return False
-
 
 def display_question_result(question_result, correct_answer):
     """display message to user and
