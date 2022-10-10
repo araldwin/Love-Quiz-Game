@@ -88,7 +88,7 @@ def display_question(q):
 
 def ask_user_option():
     """asked for user input and validate, if user input
-    is invalid ask for user input again
+       is invalid ask for user input again
     """
     while True:
         answer = input('Enter answer (1 - 4): ')
@@ -102,7 +102,7 @@ def ask_user_option():
 
 def check_user_answer(answer, correct_answer):
     """incrementing user score only if it
-    is correct answer
+       is correct answer
     """
     if answer == correct_answer:
         global score
@@ -114,7 +114,7 @@ def check_user_answer(answer, correct_answer):
 
 def display_question_result(question_result, correct_answer):
     """display message to user and
-    increment the question index
+       increment the question index
     """
 
     if question_result == True:
@@ -130,7 +130,7 @@ def display_question_result(question_result, correct_answer):
 
 def check_and_display_final_score():
     """if all the question is answered 
-    display the total score of the user
+       display the total score of the user
     """
     total_of_questions = len(QUESTIONS)
     if questionIndex == total_of_questions:
@@ -139,8 +139,9 @@ def check_and_display_final_score():
 
 
 def play_again():
-
- # ask user to quit or play again
+    """display a question to the user
+       if user wants to play again or end
+    """
     quiz_again = input("Do you want to play again? (yes or no): ")
     quiz_again = quiz_again.upper()
 
@@ -160,10 +161,9 @@ def main():
         correct_incorrect = check_user_answer(answer, correct_answer)
         display_question_result(correct_incorrect, correct_answer)
         check_and_display_final_score()
+
 main()
 
 while play_again():
     main()
-
 print("'Share your knowledge. It is a way to achieve immortality — Dalai Lama'")
-
