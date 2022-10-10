@@ -93,9 +93,14 @@ def ask_user_option():
        4. validate user input 
        5. if user input is invalid then ask user for input again
     """
-
-    answer = input('Enter asnwer (1 - 4): ')
-    return answer
+    while True:
+        answer = input('Enter asnwer (1 - 4): ')
+        if answer != ('1 - 4'):
+            print('INVALID INPUT')
+            print('Choose your answer (1, 2, 3, or 4,)?')
+        else:
+            break
+        return answer
 
 
 
