@@ -100,12 +100,10 @@ def ask_user_option():
         return answer
 
 
-def check_user_answer():
+def check_user_answer(answer, correct_answer):
+    """incrementing user score only if it
+    is correct answer
     """
-     6. if user input is valid check input with correct answer
-    7. if user input == correct_option of the question then increment score
-    """
-
     if answer == correct_answer:
         score += 1
         return True
