@@ -111,12 +111,10 @@ def check_user_answer(answer, correct_answer):
         return False
 
 
-def display_question_result():
-    
+def display_question_result(question_result, correct_answer):
+    """display message to user and
+    increment the question index
     """
-     8. display message to user
-     9. increment questionIndex
-     """
 
     if question_result == True:
         print('Correct!')
