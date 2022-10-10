@@ -117,15 +117,15 @@ def check_user_answer():
     else:
         return False
 
-    
+
+def display_question_result():
+
+     """
+     8. display message to user
+     9. increment questionIndex
+     """
 
 
-# def display_question_result():
-
-#     """
-#     8. display message to user
-#     9. increment questionIndex
-#     """
 
 
 # def check_and_display_final_score():
@@ -143,5 +143,6 @@ def main():
         display_question(question)
         answer = ask_user_option()
         correct_answer = question['correct_option']
+        correct_incorrect = check_user_answer(answer, correct_answer)
 
 main()
