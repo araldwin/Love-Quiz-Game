@@ -129,6 +129,9 @@ def display_question_result(question_result, correct_answer):
 
 
 def check_and_display_final_score():
+    """if all the question is answered 
+    display the total score of the user
+    """
     total_of_questions = len(QUESTIONS)
     if questionIndex == total_of_questions:
         print(f'Final score: {score} / {total_of_questions}')
