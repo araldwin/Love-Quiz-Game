@@ -45,6 +45,7 @@ while True:
         print()
         print(colored("Knowledge is Power!!!", "yellow"))
         print()
+        print(colored("Run program again whenever you are ready!", "red"))
         exit()
 
 QUESTIONS = [
