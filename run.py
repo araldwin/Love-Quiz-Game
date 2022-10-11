@@ -8,50 +8,6 @@ import re
 import time
 """Used to add delay in the execution of a program.."""
 
-ascii_art = figlet_format("Quiz Game")
-colored_ascii = colored(ascii_art, "yellow")
-print(colored_ascii)
-
-time.sleep(1)
-
-while True:
-    name = input(colored("Please enter your username:\n", "green"))
-    if not re.match("^[a-z, A-Z, 0-9]*$", name):
-        print()
-        print(colored("Error! No special characters allowed", "red"))
-        pass
-    elif len(name) > 15:
-        print()
-        print(colored("Error! Only 15 characters allowed!", "red"))
-    else:
-        break
-while True:
-    time.sleep(1)
-    print()
-    print(colored("Hello " + name + "!, are you ready to Start the quiz?!",
-          "yellow"))
-    print()
-    cont = input(colored("(start/exit?):\n", "green"))
-    while cont.lower() not in ("start", "exit"):
-        cont = input(colored("Type (start/exit?) only:\n", "green"))
-    if cont.lower() == "start":
-        time.sleep(1)
-        print()
-        print(colored("loading...", "green"))
-        time.sleep(2)
-        print()
-        print(colored("Proceeding to the first question...", "green"))
-        print()
-        time.sleep(1)
-        break
-    else:
-        time.sleep(1)
-        print()
-        print(colored("Knowledge is Power!!!", "yellow"))
-        print()
-        print(colored("Run program again whenever you are ready!", "red"))
-        exit()
-
 QUESTIONS = [
     {
         "question": "In which Italian city can you find the Colosseum?",
@@ -60,7 +16,7 @@ QUESTIONS = [
     },
     {
         "question": "In the Big Bang Theory Tv series, "
-        "what is the name of\nSheldon and Leonard’s neighbuor?",
+        "what is the name of\nSheldon and Leonard’s neighbour?",
         "options": "1. Penny\n2. Patty\n3. Lily\n4. Jessie",
         "correct_option": "1",
     },
@@ -112,6 +68,53 @@ QUESTIONS = [
 
 question_index = 0
 score = 0
+
+
+ascii_art = figlet_format("Quiz Game")
+colored_ascii = colored(ascii_art, "yellow")
+print(colored_ascii)
+
+time.sleep(1)
+
+while True:
+    name = input(colored("Please enter your username:\n", "green"))
+    if not re.match("^[a-z, A-Z, 0-9]*$", name):
+        print()
+        print(colored("Invalid username! No special characters allowed", "red"))
+        pass
+    elif len(name) > 15:
+        print()
+        print(colored("Invalid! username too long! Only 15 characters allowed!", "red"))
+    elif name.strip() == '':
+        print(colored("Invalid username! You must enter [A-Z, 0-9]", "red"))
+    else:
+        break
+while True:
+    time.sleep(1)
+    print()
+    print(colored("Hello " + name + "!, are you ready to Start the quiz?!",
+          "yellow"))
+    print()
+    cont = input(colored("(start/exit?):\n", "green"))
+    while cont.lower() not in ("start", "exit"):
+        cont = input(colored("Type (start/exit?) only:\n", "green"))
+    if cont.lower() == "start":
+        time.sleep(1)
+        print()
+        print(colored("loading...", "green"))
+        time.sleep(2)
+        print()
+        print(colored("Proceeding to the first question...", "green"))
+        print()
+        time.sleep(1)
+        break
+    else:
+        time.sleep(1)
+        print()
+        print(colored("Knowledge is Power!!!", "yellow"))
+        print()
+        print(colored("Run program again whenever you are ready!", "red"))
+        exit()
 
 
 def display_question(questn):
@@ -209,6 +212,7 @@ def check_and_display_final_score():
         print()
         print(colored(f"Final score: {score} / {total_of_questions}",
                       "yellow"))
+        time.sleep(1.5)
         print()
         print("--------------------------------------------------------------")
         print()
