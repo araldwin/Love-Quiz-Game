@@ -4,7 +4,7 @@ banner with color.
 """
 from pyfiglet import figlet_format
 from termcolor import colored
-
+import re
 import time
 """Used to add delay in the execution of a program.."""
 
@@ -13,8 +13,18 @@ colored_ascii = colored(ascii_art, "yellow")
 print(colored_ascii)
 
 time.sleep(1)
-name = input(colored("Please enter your username:\n", "green"))
 
+while True:
+    name = input(colored("Please enter your username:\n", "green"))
+    if not re.match("^[a-z, A-Z, 0-9]*$", name):
+        print()
+        print(colored("Error! No special characters allowed", "red"))
+        pass
+    elif len(name) > 15:
+        print()
+        print(colored("Error! Only 15 characters allowed!", "red"))
+    else:
+        break
 while True:
     time.sleep(1)
     print()
