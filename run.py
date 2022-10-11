@@ -243,4 +243,6 @@ print()
 print(colored("'Share your knowledge."
       "It is a way to achieve immortality — Dalai Lama'", "yellow"))
 time.sleep(1)
+print(colored("Exiting game...", "green"))
+time.sleep(1)
 print()
