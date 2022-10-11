@@ -94,21 +94,21 @@ QUESTIONS = [
     },
 ]
 
-questionIndex = 0
+question_index = 0
 score = 0
 
 
-def display_question(q):
+def display_question(questn):
     """Display question and option
     to the user.
     """
     time.sleep(1)
     print("-----------------------------------------------------------------")
     print()
-    print(q["question"])
+    print(questn["question"])
     print()
     time.sleep(2)
-    print(q["options"])
+    print(questn["options"])
     print()
 
 
@@ -167,8 +167,8 @@ def display_question_result(question_result, correct_answer):
         time.sleep(2)
         print("--------------------------------------------------------------")
         print(f"Your current score is {score}.")
-    global questionIndex
-    questionIndex += 1
+    global question_index
+    question_index += 1
 
 
 def check_and_display_final_score():
@@ -176,7 +176,7 @@ def check_and_display_final_score():
     display the total score of the user
     """
     total_of_questions = len(QUESTIONS)
-    if questionIndex == total_of_questions:
+    if question_index == total_of_questions:
         time.sleep(2)
         print("--------------------------------------------------------------")
         print()
