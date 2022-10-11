@@ -55,7 +55,7 @@ QUESTIONS = [
     },
     {
         "question": "In the Big Bang Theory Tv series, "
-        "what is the name of Sheldon and Leonard’s neighbor?",
+        "what is the name of\nSheldon and Leonard’s neighbor?",
         "options": "1. Penny\n2. Patty\n3. Lily\n4. Jessie",
         "correct_option": "1",
     },
@@ -71,7 +71,7 @@ QUESTIONS = [
     },
     {
         "question": "“When I find myself in times of trouble, "
-        "Mother Mary comes to me” is the opening line of which song?",
+        "Mother Mary comes to me”\nis the opening line of which song?",
         "options": "1. Smells like teen spirit – Nirvana\n"
         "2. Get lucky – Daft Punk\n"
         "3. Sweet Child O’ Mine – Gun N’ Roses\n4. Let it be – The Beatles",
@@ -196,6 +196,9 @@ def check_and_display_final_score():
         print(colored("Congratulations!", "blue"))
         print()
         time.sleep(1)
+        print(colored("Calculating total of scores...", "blue"))
+        print()
+        time.sleep(3)
         print()
         print(colored(f"Final score: {score} / {total_of_questions}",
                       "yellow"))
