@@ -197,7 +197,7 @@ def check_and_display_final_score():
         print(colored("Congratulations!", "blue"))
         print()
         time.sleep(1)
-        print(colored("Calculating total of scores...", "blue"))
+        print(colored("Calculating total of scores...", "green"))
         print()
         time.sleep(3)
         print()
