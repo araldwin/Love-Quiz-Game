@@ -117,6 +117,7 @@ def display_question(questn):
     time.sleep(1)
     print("--------------------------------------------------------------")
     print()
+    print(f"Qeuestion {question_index + 1}:")
     print(questn["question"])
     print()
     time.sleep(2)
