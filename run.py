@@ -9,7 +9,7 @@ import time
 """Delaying time format."""
 
 ascii_art = figlet_format("WELCOME\nto\nQuiz Game")
-colored_ascii = colored(ascii_art, "cyan")
+colored_ascii = colored(ascii_art, "yellow")
 print(colored_ascii)
 
 time.sleep(1)
