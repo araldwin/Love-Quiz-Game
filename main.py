@@ -1,11 +1,14 @@
 # importing modules
-
+"""Create a Customize Introduction
+banner with color
+"""
 from pyfiglet import figlet_format
 from termcolor import colored
 
 import time
+"""Delaying time format"""
 
-ascii_art = figlet_format("WELCOME")
+ascii_art = figlet_format("WELCOME\nto\nQuiz Game")
 colored_ascii = colored(ascii_art, "green")
 print(colored_ascii)
 
@@ -47,7 +50,8 @@ QUESTIONS = [
         "correct_option": "2",
     },
     {
-        "question": "In the Big Bang Theory Tv series, what is the name of Sheldon and Leonard’s neighbor?",
+        "question": "In the Big Bang Theory Tv series, "
+        "what is the name of Sheldon and Leonard’s neighbor?",
         "options": "1. Penny\n2. Patty\n3. Lily\n4. Jessie",
         "correct_option": "1",
     },
@@ -62,14 +66,17 @@ QUESTIONS = [
         "correct_option": "1",
     },
     {
-        "question": "“When I find myself in times of trouble, Mother Mary comes to me” is the opening line of which song?",
-        "options": "1. Smells like teen spirit – Nirvana\n2. Get lucky – Daft Punk\n"
+        "question": "“When I find myself in times of trouble, "
+        "Mother Mary comes to me” is the opening line of which song?",
+        "options": "1. Smells like teen spirit – Nirvana\n"
+        "2. Get lucky – Daft Punk\n"
         "3. Sweet Child O’ Mine – Gun N’ Roses\n4. Let it be – The Beatles",
         "correct_option": "4",
     },
     {
         "question": "Who famously said “Veni, vidi, vici”?",
-        "options": "1. Winston Churchill\n2. Charles de Gaulle\n3. Julius Caesar\n4. Alexander the Great",
+        "options": "1. Winston Churchill\n2. Charles de Gaulle\n"
+        "3. Julius Caesar\n4. Alexander the Great",
         "correct_option": "3",
     },
     {
