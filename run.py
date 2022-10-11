@@ -56,7 +56,7 @@ QUESTIONS = [
     },
     {
         "question": "In the Big Bang Theory Tv series, "
-        "what is the name of\nSheldon and Leonard’s neighbor?",
+        "what is the name of\nSheldon and Leonard’s neighbuor?",
         "options": "1. Penny\n2. Patty\n3. Lily\n4. Jessie",
         "correct_option": "1",
     },
@@ -96,7 +96,7 @@ QUESTIONS = [
     },
     {
         "question": "How high is Mount Everest?",
-        "options": "1. 5,849\n2. 6,849 m\n3. 7,849 m\n4. 8,849 m",
+        "options": "1. 5,849 m\n2. 6,849 m\n3. 7,849 m\n4. 8,849 m",
         "correct_option": "4",
     },
     {
@@ -240,7 +240,7 @@ main()
 while play_again():
     main()
 print()
-print(colored("'Share your knowledge."
+print(colored("'Share your knowledge. "
       "It is a way to achieve immortality — Dalai Lama'", "yellow"))
 time.sleep(1)
 print(colored("Exiting game...", "green"))
