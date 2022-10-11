@@ -1,31 +1,32 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Developer: Aldwin Arriola
 
-Welcome araldwin,
+## Table of content
+1. [Purpose of the project](#purpose-of-the-project)
+2. [User stories](#user-stories)
+3. [Features](#features)
+4. [Typography and color scheme](#typography-and-color-scheme)
+5. [Wireframes](#wireframes)
+6. [Technology](#technology)
+7. [Testing](#testing)
+   - 7.1 Code Validation
+     - <details>
+       <summary>PEP8 Python Validator</summary>
+       <br>
+       ![pqg-pepeightvalidator](/docs/pqg-pepeightvalidaotr.png)
+       </details>
+   - 7.2 Fixed bugs
+   - 7.3 Supported screens and browsers
+8. [Deployment](#deployment)
+   - via Heroku
+     - go and log in to [Heroku]((https://id.heroku.com/login))
+     - from the Heroku dashboard "Create new app".
+     - name app adjust it to something unique, select region and clicked   "Create   app".
+     - after creating, proceed to the Settings and click "Config Var", in field Type the key is PORT and the value is 8000, and then click "Add".
+     - next step is Scroll down and "Add buildpack". Add "python" buildpack first and then save changes, then add "nodejs" and click save again. build pack should be in order. python on top and nodejs at the bottom.
+     - go to Deploy section. In deployment method select "GitHub", and confirm to "connect to GitHub".
+     - search for Github repository name and clicked "connect".
+     - scroll down and choose if "Automatic deploys" or "Manual deploy", then click "Deploy branch".
+     - after clicking "Deploy branch" the app is being built, App will successfully deploy after couple of minutes and click "view".
+     - the link will proceed and open our mock terminal.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
-
-## Reminders
-
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
-
-## Creating the Heroku app
-
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
+9. [Credits](#credits)
