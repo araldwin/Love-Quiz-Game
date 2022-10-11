@@ -8,7 +8,7 @@ from termcolor import colored
 import time
 """Delaying time format."""
 
-ascii_art = figlet_format("WELCOME\nto\nQuiz Game")
+ascii_art = figlet_format("Quiz Game")
 colored_ascii = colored(ascii_art, "yellow")
 print(colored_ascii)
 
