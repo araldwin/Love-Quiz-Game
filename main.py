@@ -13,7 +13,7 @@ colored_ascii = colored(ascii_art, "cyan")
 print(colored_ascii)
 
 time.sleep(1)
-name = input(colored("Please enter your username: ", "green"))
+name = input(colored("Please enter your username:\n", "green"))
 
 while True:
     time.sleep(1)
@@ -21,9 +21,9 @@ while True:
     print(colored("Hello " + name + "!, are you ready to answer the quiz?!",
           "yellow"))
     print()
-    cont = input(colored("(yes/no?): ", "green"))
+    cont = input(colored("(yes/no?):\n", "green"))
     while cont.lower() not in ("yes", "no"):
-        cont = input(colored("Answer (yes/no?) only: ", "green"))
+        cont = input(colored("Answer (yes/no?) only:\n", "green"))
     if cont == "yes":
         print()
         print()
@@ -129,7 +129,7 @@ def ask_user_option():
     """
     while True:
         time.sleep(.5)
-        answer = input(colored("Enter answer (1 - 4): ", "green"))
+        answer = input(colored("Enter answer (1 - 4):\n", "green"))
         print()
         if answer not in ("1", "2", "3", "4"):
             time.sleep(2)
@@ -208,7 +208,7 @@ def play_again():
     """Display a question to the user
     if user wants to play again or end
     """
-    quiz_again = input(colored("Do you want to play again? (yes or no): ",
+    quiz_again = input(colored("Do you want to play again? (yes or no):\n",
                        "green"))
     quiz_again = quiz_again.upper()
 
