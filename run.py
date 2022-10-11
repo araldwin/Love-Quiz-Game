@@ -24,19 +24,13 @@ while True:
     cont = input(colored("(start/exit?):\n", "green"))
     while cont.lower() not in ("start", "exit"):
         cont = input(colored("Type (start/exit?) only:\n", "green"))
-    if cont == "start":
-        print()
-        print()
-        print()
+    if cont.lower() == "start":
         time.sleep(1)
         print()
         print(colored("loading...", "green"))
-        print()
         time.sleep(2)
         print()
-        print()
         print(colored("Proceeding to the first question...", "green"))
-        print()
         print()
         time.sleep(1)
         break
@@ -114,6 +108,7 @@ def display_question(questn):
     """Display question and option
     to the user.
     """
+
     time.sleep(1)
     print("--------------------------------------------------------------")
     print()
