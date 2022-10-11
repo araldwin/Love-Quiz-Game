@@ -1,47 +1,51 @@
 # importing modules
 """Create a Customize Introduction
-banner with color
+banner with color.
 """
 from pyfiglet import figlet_format
 from termcolor import colored
 
 import time
-"""Delaying time format"""
+"""Delaying time format."""
 
 ascii_art = figlet_format("WELCOME\nto\nQuiz Game")
-colored_ascii = colored(ascii_art, "green")
+colored_ascii = colored(ascii_art, "cyan")
 print(colored_ascii)
 
 time.sleep(1)
-name = input("Please enter your username: ")
+name = input(colored("Please enter your username: ", "green"))
 
 while True:
     time.sleep(1)
     print()
-    print("Hello " + name + "!, are you ready to answer the quiz?!")
+    print(colored("Hello " + name + "!, are you ready to answer the quiz?!",
+          "yellow"))
     print()
-    cont = input("(yes/no?): ")
+    cont = input(colored("(yes/no?): ", "green"))
     while cont.lower() not in ("yes", "no"):
-        cont = input("Answer (yes/no?) only: ")
+        cont = input(colored("Answer (yes/no?) only: ", "green"))
     if cont == "yes":
         print()
-        print("-----------------------------------------------------------")
+        print()
+        print()
         time.sleep(1)
         print()
-        print("awesome!...")
+        print(colored("loading...", "green"))
         print()
         time.sleep(2)
-        print(
-            "-----------------------------------------------------------------"
-        )
         print()
-        print("Proceeding to the first question...")
+        print()
+        print(colored("Proceeding to the first question...", "green"))
+        print()
         print()
         time.sleep(1)
         break
     else:
-        pass
-    time.sleep(1)
+        time.sleep(1)
+        print()
+        print(colored("Knowledge is Power!!!", "yellow"))
+        print()
+        exit()
 
 QUESTIONS = [
     {
@@ -110,7 +114,7 @@ def display_question(questn):
     to the user.
     """
     time.sleep(1)
-    print("-----------------------------------------------------------------")
+    print("--------------------------------------------------------------")
     print()
     print(questn["question"])
     print()
@@ -124,17 +128,19 @@ def ask_user_option():
     is invalid ask for user input again
     """
     while True:
-        time.sleep(1)
-        answer = input("Enter answer (1 - 4): ")
+        time.sleep(.5)
+        answer = input(colored("Enter answer (1 - 4): ", "green"))
         print()
         if answer not in ("1", "2", "3", "4"):
             time.sleep(2)
-            print("----------------------------------------------------------")
-            print("INVALID INPUT")
-            print("----------------------------------------------------------")
+            print("----------------------------------------------------------"
+                  "----")
+            print(colored(">>>>>>>>>>INVALID INPUT<<<<<<<<<<", "red"))
+            print("----------------------------------------------------------"
+                  "----")
             time.sleep(1)
             print()
-            print("Choose your answer (1, 2, 3, or 4)?")
+            print(colored("Choose your answer (1, 2, 3, or 4)?", "green"))
             print()
         else:
             break
@@ -159,21 +165,21 @@ def display_question_result(question_result, correct_answer):
     """
 
     if question_result:
-        print("-------------------------------------------------------------")
+        print("--------------------------------------------------------------")
         time.sleep(0.3)
-        print("Correct!")
+        print(colored("Correct!", "blue"))
         time.sleep(1)
-        print(f"Your current score is {score}.")
+        print(colored(f"Your current score is {score}.", "yellow"))
     else:
         time.sleep(2)
         print("--------------------------------------------------------------")
-        print("Ooops! That was incorrect!!!")
+        print(colored("Ooops! That was incorrect!!!", "red"))
         print("--------------------------------------------------------------")
         time.sleep(2)
-        print(f"The correct answer is {correct_answer}.")
+        print(colored(f"The correct answer is {correct_answer}.", "blue"))
         time.sleep(2)
         print("--------------------------------------------------------------")
-        print(f"Your current score is {score}.")
+        print(colored(f"Your current score is {score}.", "yellow"))
     global question_index
     question_index += 1
 
@@ -187,7 +193,12 @@ def check_and_display_final_score():
         time.sleep(2)
         print("--------------------------------------------------------------")
         print()
-        print(f"Final score: {score} / {total_of_questions}")
+        print(colored("Congratulations!", "blue"))
+        print()
+        time.sleep(1)
+        print()
+        print(colored(f"Final score: {score} / {total_of_questions}",
+                      "yellow"))
         print()
         print("--------------------------------------------------------------")
         print()
@@ -197,7 +208,8 @@ def play_again():
     """Display a question to the user
     if user wants to play again or end
     """
-    quiz_again = input("Do you want to play again? (yes or no): ")
+    quiz_again = input(colored("Do you want to play again? (yes or no): ",
+                       "green"))
     quiz_again = quiz_again.upper()
 
     if quiz_again == "YES":
@@ -223,6 +235,8 @@ main()
 
 while play_again():
     main()
-print(
-    "'Share your knowledge. It is a way to achieve immortality — Dalai Lama'"
-)
+print()
+print(colored("'Share your knowledge."
+      "It is a way to achieve immortality — Dalai Lama'", "yellow"))
+time.sleep(1)
+print()
