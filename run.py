@@ -18,13 +18,13 @@ name = input(colored("Please enter your username:\n", "green"))
 while True:
     time.sleep(1)
     print()
-    print(colored("Hello " + name + "!, are you ready to answer the quiz?!",
+    print(colored("Hello " + name + "!, are you ready to Start the quiz?!",
           "yellow"))
     print()
-    cont = input(colored("(yes/no?):\n", "green"))
-    while cont.lower() not in ("yes", "no"):
-        cont = input(colored("Answer (yes/no?) only:\n", "green"))
-    if cont == "yes":
+    cont = input(colored("(start/exit?):\n", "green"))
+    while cont.lower() not in ("start", "exit"):
+        cont = input(colored("Type (start/exit?) only:\n", "green"))
+    if cont == "start":
         print()
         print()
         print()
