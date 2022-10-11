@@ -6,7 +6,7 @@ from pyfiglet import figlet_format
 from termcolor import colored
 
 import time
-"""Delaying time format."""
+"""Used to add delay in the execution of a program.."""
 
 ascii_art = figlet_format("Quiz Game")
 colored_ascii = colored(ascii_art, "yellow")
