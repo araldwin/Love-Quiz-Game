@@ -76,6 +76,7 @@ print(colored_ascii)
 
 time.sleep(1)
 
+
 while True:
     name = input(colored("Please enter your username:\n", "green"))
     if not re.match("^[a-z, A-Z, 0-9]*$", name):
@@ -117,7 +118,7 @@ while True:
         exit()
 
 
-def display_question(questn):
+def display_question(correct_question):
     """Display question and option
     to the user.
     """
@@ -126,10 +127,10 @@ def display_question(questn):
     print("--------------------------------------------------------------")
     print()
     print(f"Qeuestion {question_index + 1}:")
-    print(questn["question"])
+    print(correct_question["question"])
     print()
     time.sleep(2)
-    print(questn["options"])
+    print(correct_question["options"])
     print()
 
 
@@ -222,11 +223,15 @@ def play_again():
     """Display a question to the user
     if user wants to play again or end
     """
-    quiz_again = input(colored("Do you want to play again? (yes or no):\n",
-                       "green"))
+    quiz_again = input(colored("Press 'Enter' to exit.\n"
+                               "Type 'YES' to play again:\n", "green"))
     quiz_again = quiz_again.upper()
 
     if quiz_again == "YES":
+        global score
+        score = 0
+        global question_index
+        question_index = 0
         return True
     else:
         return False
