@@ -2,11 +2,11 @@
 """Create a Customize Introduction
 banner with color.
 """
-from pyfiglet import figlet_format
-from termcolor import colored
 import re
 import time
-"""Used to add delay in the execution of a program.."""
+from pyfiglet import figlet_format
+from termcolor import colored
+
 
 QUESTIONS = [
     {
@@ -66,8 +66,8 @@ QUESTIONS = [
     },
 ]
 
-question_index = 0
-score = 0
+QUESTION_INDEX = 0
+SCORE = 0
 
 
 ascii_art = figlet_format("Quiz Game")
@@ -82,7 +82,6 @@ while True:
     if not re.match("^[a-z, A-Z, 0-9]*$", name):
         print()
         print(colored("Invalid username! No special characters allowed", "red"))
-        pass
     elif len(name) > 15:
         print()
         print(colored("Invalid! username too long! Only 15 characters allowed!", "red"))
@@ -126,7 +125,7 @@ def display_question(correct_question):
     time.sleep(1)
     print("--------------------------------------------------------------")
     print()
-    print(f"Qeuestion {question_index + 1}:")
+    print(f"Qeuestion {QUESTION_INDEX + 1}:")
     print(correct_question["question"])
     print()
     time.sleep(2)
@@ -163,8 +162,8 @@ def check_user_answer(answer, correct_answer):
     is correct answer
     """
     if answer == correct_answer:
-        global score
-        score += 1
+        global SCORE
+        SCORE += 1
         return True
     elif answer != correct_answer:
         return False
@@ -180,7 +179,7 @@ def display_question_result(question_result, correct_answer):
         time.sleep(0.3)
         print(colored("Correct!", "blue"))
         time.sleep(1)
-        print(colored(f"Your current score is {score}.", "yellow"))
+        print(colored(f"Your current score is {SCORE}.", "yellow"))
     else:
         time.sleep(2)
         print("--------------------------------------------------------------")
@@ -190,9 +189,9 @@ def display_question_result(question_result, correct_answer):
         print(colored(f"The correct answer is {correct_answer}.", "blue"))
         time.sleep(2)
         print("--------------------------------------------------------------")
-        print(colored(f"Your current score is {score}.", "yellow"))
-    global question_index
-    question_index += 1
+        print(colored(f"Your current score is {SCORE}.", "yellow"))
+    global QUESTION_INDEX
+    QUESTION_INDEX += 1
 
 
 def check_and_display_final_score():
@@ -200,7 +199,7 @@ def check_and_display_final_score():
     display the total score of the user
     """
     total_of_questions = len(QUESTIONS)
-    if question_index == total_of_questions:
+    if QUESTION_INDEX == total_of_questions:
         time.sleep(2)
         print("--------------------------------------------------------------")
         print()
@@ -211,7 +210,7 @@ def check_and_display_final_score():
         print()
         time.sleep(3)
         print()
-        print(colored(f"Final score: {score} / {total_of_questions}",
+        print(colored(f"Final score: {SCORE} / {total_of_questions}",
                       "yellow"))
         time.sleep(1.5)
         print()
@@ -228,10 +227,10 @@ def play_again():
     quiz_again = quiz_again.upper()
 
     if quiz_again == "YES":
-        global score
-        score = 0
-        global question_index
-        question_index = 0
+        global SCORE
+        SCORE = 0
+        global QUESTION_INDEX
+        QUESTION_INDEX = 0
         return True
     else:
         return False
@@ -256,7 +255,7 @@ while play_again():
     main()
 print()
 print(colored("'Share your knowledge. "
-      "It is a way to achieve immortality — Dalai Lama'", "yellow"))
+              "It is a way to achieve immortality — Dalai Lama'", "yellow"))
 time.sleep(1)
 print(colored("Exiting game...", "green"))
 time.sleep(1)
