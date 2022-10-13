@@ -17,7 +17,7 @@ ascii_art = figlet_format("Quiz Game")
 colored_ascii = colored(ascii_art, "yellow")
 print(colored_ascii)
 
-time.sleep(1)
+time.sleep(.1)
 
 
 def initialize_game():
@@ -38,7 +38,7 @@ def initialize_game():
         else:
             break
     while True:
-        time.sleep(1)
+        time.sleep(.1)
         print()
         print(colored("Hello " + name + "!, are you ready to Start the quiz?!",
                       "yellow"))
@@ -47,16 +47,16 @@ def initialize_game():
         while cont.lower() not in ("start", "exit"):
             cont = input(colored("Type (start/exit?) only:\n", "green"))
         if cont.lower() == "start":
-            time.sleep(1)
+            time.sleep(.1)
             print()
             print(colored("loading...", "green"))
-            time.sleep(2)
+            time.sleep(.1)
             print()
             print(colored("Proceeding to the first question...", "green"))
             print()
-            time.sleep(1)
+            time.sleep(.1)
             break
-        time.sleep(1)
+        time.sleep(.1)
         print()
         print(colored("Knowledge is Power!!!", "yellow"))
         print()
@@ -64,21 +64,18 @@ def initialize_game():
         sys.exit()
 
 
-initialize_game()
-
-
 def display_question(correct_question):
     """Display question and option
     to the user.
     """
 
-    time.sleep(1)
+    time.sleep(.1)
     print("--------------------------------------------------------------")
     print()
     print(f"Question {QUESTION_INDEX + 1}:")
     print(correct_question["question"])
     print()
-    time.sleep(2)
+    time.sleep(.1)
     print(correct_question["options"])
     print()
 
@@ -92,13 +89,13 @@ def ask_user_option():
         answer = input(colored("Enter answer (1 - 4):\n", "green"))
         print()
         if answer not in ("1", "2", "3", "4"):
-            time.sleep(2)
+            time.sleep(.1)
             print("----------------------------------------------------------"
                   "----")
             print(colored(">>>>>>>>>>INVALID INPUT<<<<<<<<<<", "red"))
             print("----------------------------------------------------------"
                   "----")
-            time.sleep(1)
+            time.sleep(.1)
             print()
             print(colored("Choose your answer (1, 2, 3, or 4)?", "green"))
             print()
@@ -129,16 +126,16 @@ def display_question_result(question_result, correct_answer):
         print("--------------------------------------------------------------")
         time.sleep(0.3)
         print(colored("Correct!", "blue"))
-        time.sleep(1)
+        time.sleep(.1)
         print(colored(f"Your current score is {SCORE}.", "yellow"))
     else:
-        time.sleep(2)
+        time.sleep(.1)
         print("--------------------------------------------------------------")
         print(colored("Ooops! That was incorrect!!!", "red"))
         print("--------------------------------------------------------------")
-        time.sleep(2)
+        time.sleep(.1)
         print(colored(f"The correct answer is {correct_answer}.", "blue"))
-        time.sleep(2)
+        time.sleep(.1)
         print("--------------------------------------------------------------")
         print(colored(f"Your current score is {SCORE}.", "yellow"))
     global QUESTION_INDEX
@@ -151,15 +148,15 @@ def check_and_display_final_score():
     """
     total_of_questions = len(QUESTIONS)
     if QUESTION_INDEX == total_of_questions:
-        time.sleep(2)
+        time.sleep(.1)
         print("--------------------------------------------------------------")
         print()
         print(colored("Congratulations!", "blue"))
         print()
-        time.sleep(1)
+        time.sleep(.1)
         print(colored("Calculating total of scores...", "green"))
         print()
-        time.sleep(3)
+        time.sleep(.1)
         print()
         print(colored(f"Final score: {SCORE} / {total_of_questions}",
                       "yellow"))
@@ -206,12 +203,13 @@ def repeat_game():
     print(colored("'Share your knowledge. "
                   "It is a way to achieve immortality"
                   " — Dalai Lama'", "yellow"))
-    time.sleep(1)
+    time.sleep(.1)
     print(colored("Exiting game...", "green"))
-    time.sleep(1)
+    time.sleep(.1)
     print()
 
 
 if __name__ == '__main__':
+    initialize_game()
     main()
     repeat_game()
