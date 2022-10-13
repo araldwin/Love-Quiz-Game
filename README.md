@@ -17,7 +17,16 @@
 The purpose of this project is for Project #3(Python), this is part of me achieving the Diploma in Full Stack Software Development at [Code Institute](https://codeinstitute.net/).besides this it is another General Knowledge, Fun Trivia question quiz game project, it can provide more knowledge for the User.
 
 ## User stories
-
+As a user:
+  - there must be a username input.
+  - there should be a choice whether I'm ready to play or not.
+  - I should have a choice to answer each question.
+  - question number must be displayed.
+  - the score of correct answer should be displayed.
+  - if my answer is wrong, I should see the correct answer to the question.
+  - every correct answer should increase my score.
+  - after I answer all the questions I should see the total of my final score.
+  - at the end of the game I should have a choice whether to repeat the game or not.
 
 ## Features
 - ### A Simple, Easy to Remember URL:[love-quiz-game](https://love-quiz-game.herokuapp.com/)
@@ -67,8 +76,13 @@ The purpose of this project is for Project #3(Python), this is part of me achiev
 
 ## Credits
    - [W3C School](https://www.w3schools.com/) - for more knowledge that I learned.
+   - [freecodecamp.org/](https://www.freecodecamp.org/)
+   - [stackoverflow.com](https://stackoverflow.com/)
+   - [programiz.com](https://www.programiz.com/)
 ## Acknowledgements
    - Mr. Rohit to my mentor
+   - Zack Owen
+   - Warwick Hart
    - Student Support
    - Slack community
    - Code institute
