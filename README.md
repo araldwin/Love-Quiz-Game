@@ -62,8 +62,8 @@ As a user:
 - [Git](http://gitscm.com) - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 - [Gitpod](https://gitpod.io) - IDE used to code the project.
 - [GitHub](https://github.com) - GitHub is used to store the project's code after being pushed from Git.
-- [Visual Studio Code for Windows] - IDE used to code the project.
-- [Windows Snipping Tool] - used to save the screen shot.
+- Visual Studio Code for Windows - IDE used to code the project.
+- Windows Snipping Tool - used to save the screen shot.
 
 -----
 ## Testing

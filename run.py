@@ -4,6 +4,7 @@ banner with color.
 """
 import re
 import time
+import sys
 from pyfiglet import figlet_format
 from termcolor import colored
 
@@ -81,10 +82,12 @@ while True:
     name = input(colored("Please enter your username:\n", "green"))
     if not re.match("^[a-z, A-Z, 0-9]*$", name):
         print()
-        print(colored("Invalid username! No special characters allowed", "red"))
+        print(colored("Invalid username!"
+                      "No special characters allowed", "red"))
     elif len(name) > 15:
         print()
-        print(colored("Invalid! username too long! Only 15 characters allowed!", "red"))
+        print(colored("Invalid! username too long!"
+                      "Only 15 characters allowed!", "red"))
     elif name.strip() == '':
         print(colored("Invalid username! You must enter [A-Z, 0-9]", "red"))
     else:
@@ -108,13 +111,12 @@ while True:
         print()
         time.sleep(1)
         break
-    else:
-        time.sleep(1)
-        print()
-        print(colored("Knowledge is Power!!!", "yellow"))
-        print()
-        print(colored("Run program again whenever you are ready!", "red"))
-        exit()
+    time.sleep(1)
+    print()
+    print(colored("Knowledge is Power!!!", "yellow"))
+    print()
+    print(colored("Run program again whenever you are ready!", "red"))
+    sys.exit()
 
 
 def display_question(correct_question):
@@ -125,7 +127,7 @@ def display_question(correct_question):
     time.sleep(1)
     print("--------------------------------------------------------------")
     print()
-    print(f"Qeuestion {QUESTION_INDEX + 1}:")
+    print(f"Question {QUESTION_INDEX + 1}:")
     print(correct_question["question"])
     print()
     time.sleep(2)
@@ -161,12 +163,13 @@ def check_user_answer(answer, correct_answer):
     """Incrementing user score only if it
     is correct answer
     """
-    if answer == correct_answer:
+    if answer is correct_answer:
         global SCORE
         SCORE += 1
         return True
-    elif answer != correct_answer:
+    if answer != correct_answer:
         return False
+    return None
 
 
 def display_question_result(question_result, correct_answer):
@@ -232,8 +235,7 @@ def play_again():
         global QUESTION_INDEX
         QUESTION_INDEX = 0
         return True
-    else:
-        return False
+    return None
 
 
 def main():
@@ -249,14 +251,19 @@ def main():
         check_and_display_final_score()
 
 
-main()
+def repeat_game():
+    while play_again():
+        main()
+    print()
+    print(colored("'Share your knowledge. "
+                  "It is a way to achieve immortality"
+                  " — Dalai Lama'", "yellow"))
+    time.sleep(1)
+    print(colored("Exiting game...", "green"))
+    time.sleep(1)
+    print()
 
-while play_again():
+
+if __name__ == '__main__':
     main()
-print()
-print(colored("'Share your knowledge. "
-              "It is a way to achieve immortality — Dalai Lama'", "yellow"))
-time.sleep(1)
-print(colored("Exiting game...", "green"))
-time.sleep(1)
-print()
+    repeat_game()
