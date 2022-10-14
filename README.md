@@ -97,7 +97,7 @@ As a user:
 ### End game options
 - <details>
        <summary> display final score screen shot </summary>
-       <img src="docs/pqg-displayfo.png">
+       <img src="docs/pqg-displayfs.png">
        </details>
 
        - when User are finish answering all the question, it will display a message "Congratulations... Calculating total of score..." 
