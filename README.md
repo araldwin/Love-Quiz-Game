@@ -9,7 +9,7 @@
 2. [User stories](#user-stories)
 3. [Features](#features)
 4. [Color scheme](#color-scheme)
-5. [Wireframes](#wireframes)
+5. [Flowchart](#flowchart)
 6. [Technology](#technology)
 7. [Testing](#testing)
    - 7.1 Code Validation
@@ -22,6 +22,7 @@ The purpose of this project is for Project #3(Python), this is part of me achiev
 
 ## User stories
 As a user:
+  - there must be a main menu with a graphic welcome message.
   - there must be a username input.
   - there should be a choice whether I'm ready to play or not.
   - I should have a choice to answer each question.
@@ -30,40 +31,132 @@ As a user:
   - if my answer is wrong, I should see the correct answer to the question.
   - every correct answer should increase my score.
   - after I answer all the questions I should see the total of my final score.
-  - at the end of the game I should have a choice whether to repeat the game or not.
+  - at the end of the game I should have a options whether to play the game again or not.
 
 ## Features
 - ### A Simple, Easy to Remember URL:[https://love-quiz-game.herokuapp.com/](https://love-quiz-game.herokuapp.com/)
 -----
+### Main Menu
+ - <details>
+       <summary> Display Welcome Message </summary>
+       <img src="docs/pqg-mainwelcome.png">
+       </details>
+
+       - It has a graphic welcome message.
+
+### User name input
+- <details>
+       <summary> Ask User for Username input </summary>
+       <img src="docs/pqg-usernameinputvalidation.png">
+       </details>
+
+       - User are not allowed to use Special Characters.
+       - User are not allowed to have a more than 15 Characters.
+       - User should input a username, blank name is not allowed.
+
+
+### Play game options
+- <details>
+       <summary> start option screen shot </summary>
+       <img src="docs/pqg-startoption.png">
+       </details>
+
+       -  User may type input "start,Start,sTaRt, ..." only.
+       -  when user input is valid it will display a message to proceed into the main game.
+
+- <details>
+       <summary> exit screen shot </summary>
+       <img src="docs/pqg-exitoption.png">
+       </details>
+
+       -  User may type input "exit,EXIT,exit, ..." only.
+       -  when user input is valid it will display a message quote and exit the game. 
+
+### Main Game
+- <details>
+       <summary> Display Question no., Question, and Option screen shot</summary>
+       <img src="docs/pqg-displayqo.png">
+       </details>
+
+- <details>
+       <summary> User answer input validation screen shot</summary>
+       <img src="docs/pqg-answerinputval.png">
+       </details>
+
+       - User must only select numbers from 1 - 4 or else it will be invalid and return to input an answer.
+       - after choosing a valid answer it will proceed to the next question.
+
+- <details>
+       <summary> check user answer screen shot</summary>
+       <img src="docs/pqg-checkuseranswer.png">
+       </details>
+
+       - when User answer is wrong, it will display a message "Incorrect", after that it will display the correct answer, and then display the User's current score.
+       - if the User answer is correct, it will display a message "Correct", and add +1 score to User's current score.
+
+### End game options
+- <details>
+       <summary> display final score screen shot </summary>
+       <img src="docs/pqg-displayfo.png">
+       </details>
+
+       - when User are finish answering all the question, it will display a message "Congratulations... Calculating total of score..." 
+       - it will display Final Score of the User's all correct answers out of total lenght of questions.
+
+- <details>
+       <summary> play again screen shot </summary>
+       <img src="docs/pqg-playagainoption.png">
+       </details>
+
+       - User may tpye "yes,YES,yEs, ..." to play again.
+
+- <details>
+       <summary> exit game screen shot </summary>
+       <img src="docs/pqg-playagainquit.png">
+       </details>
+
+       - User may tpye anything to exit the game except "yes,YES,yEs, 'space'Yes ..."
+       - it will display a quote message and "exiting the game..."
+
 
 -----
 
  - ### Future features
-    
+    - Add more questions 
+    - Make questions random
+    - Highest scores
  -----     
 ## Color scheme
 - <details>
        <summary> Color Scheme </summary>
-       <img src="docs/pqg-colorscheme.png" width="20%">
+       <img src="docs/pqg-colorscheme.png" width="40%">
        
      - I used these colors to make the quiz app look good and enhance user experience.
        </details>
 
 -----
-## Wireframes
+## Flowchart
+
+- [Quiz Game flowchart](https://lucid.app/lucidchart/682080d9-52a3-4cfb-97e4-d4db0ea5a972/edit?viewport_loc=-374%2C-119%2C2994%2C1481%2C0_0&invitationId=inv_187ec8c7-02cc-423c-b08d-85ee8d078fe9#)
+
+- <details>
+       <summary> Flowchart Screenshot</summary>
+       <img src="docs/pqg-flowchart.png" width="100%">
+       </details>
+
 
 -----
 ## Technology
 ### Languages used
 - [Python](https://www.python.org/)
 ### Others
-
-- [Google Fonts](https://fonts.google.com) - where i import and use font-style for this project.
+- [Lucidchart](https://www.lucidchart.com/) - Tools used to build a flowchart.
+- [Google Fonts](https://fonts.google.com) - Where i import and use font-style for this project.
 - [Git](http://gitscm.com) - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 - [Gitpod](https://gitpod.io) - IDE used to code the project.
 - [GitHub](https://github.com) - GitHub is used to store the project's code after being pushed from Git.
 - Visual Studio Code for Windows - IDE used to code the project.
-- Windows Snipping Tool - used to save the screen shot.
+- Windows Snipping Tool - Used to save the screen shot.
 
 -----
 ## Testing

@@ -12,6 +12,8 @@ from data import QUESTIONS
 QUESTION_INDEX = 0
 SCORE = 0
 
+print()
+print('Welcome to:')
 
 ascii_art = figlet_format("Quiz Game")
 colored_ascii = colored(ascii_art, "yellow")
@@ -170,8 +172,7 @@ def play_again():
     """Display a question to the user
     if user wants to play again or end
     """
-    quiz_again = input(colored("Press 'Enter' to exit.\n"
-                               "Type 'YES' to play again:\n", "green"))
+    quiz_again = input(colored("Type ONLY 'YES' to play again:\n", "green"))
     quiz_again = quiz_again.upper()
 
     if quiz_again == "YES":
