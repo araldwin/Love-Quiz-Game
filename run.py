@@ -20,6 +20,10 @@ PLAYER_SCORE = 0
 
 
 def initialize_game():
+    """
+    a function as the main menu of the game.
+    where user name input and play game options are.
+    """
 
     print()
     print('Welcome to:')
@@ -206,6 +210,9 @@ def main():
 
 
 def repeat_game():
+    """
+    a function option whether you like to play again or not.
+    """
     while play_again():
         main()
     print()
