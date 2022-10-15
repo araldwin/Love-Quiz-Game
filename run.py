@@ -1,6 +1,7 @@
 # importing modules
-"""Create a Customize Introduction
-banner with color.
+"""
+get access to code from another module by
+importing the file/function using import.
 """
 import re
 import time

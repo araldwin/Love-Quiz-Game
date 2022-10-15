@@ -127,11 +127,20 @@ As a user:
     - Highest scores
  -----     
 ## Color scheme
+- [termcolor](https://pypi.org/project/termcolor/) - Module used to achieve text color in Terminal.
+  - How to install termcolor in Python [(Click the link)](https://blog.finxter.com/how-to-install-termcolor-in-python/).
+  - How to import and use termcolor in python [(Click the link)](https://pypi.org/project/termcolor/).
+    
 - <details>
-       <summary> Color Scheme </summary>
+       <summary> Color Scheme screen shot</summary>
        <img src="docs/pqg-colorscheme.png" width="40%">
        
-     - I used these colors to make the quiz app look good and enhance user experience.
+     - I used these colors to make the quiz app text look good and enhance user experience.
+       - Red - For Incorrect and Invalid text.
+       - Blue - For correct answer text.
+       - Green - Mostly message text before entering answer to input.
+       - Yellow - Welcome message, current score, final score text.
+       - White - Is normal or default text color from the terminal.
        </details>
 
 -----
@@ -150,6 +159,7 @@ As a user:
 ### Languages used
 - [Python](https://www.python.org/)
 ### Others
+- [Termcolor](https://pypi.org/project/termcolor/) - Module used to achieve text color in Terminal.
 - [Lucidchart](https://www.lucidchart.com/) - Tools used to build a flowchart.
 - [Google Fonts](https://fonts.google.com) - Where i import and use font-style for this project.
 - [Git](http://gitscm.com) - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
@@ -228,6 +238,8 @@ Bugs
    - [PEP 8](https://peps.python.org/pep-0008/) – Style Guide for Python Code.
    - [Youtube.com](https://www.youtube.com/) - For Python tutorials.
    - [quiztriviagames.com](https://www.quiztriviagames.com/multiple-choice-trivia-questions/) - I get my questions and answers.
+   - [Finxter](https://blog.finxter.com/how-to-install-termcolor-in-python/) - Guide on how to install termcolor in Python.
+   - [pypi.org](https://pypi.org/project/termcolor/) - Guide on how to use termcolor module.
 ## Acknowledgements
    - @Mr. Rohit to my mentor
    - @Jay Rodriguez
