@@ -1,4 +1,4 @@
-QUESTIONS = [
+questions = [
     {
         "question": "In which Italian city can you find the Colosseum?",
         "options": "1. Venice\n2. Rome\n3. Naples\n4. Milan",

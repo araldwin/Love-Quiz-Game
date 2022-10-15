@@ -52,7 +52,6 @@ As a user:
 
        - User are not allowed to use Special Characters.
        - User are not allowed to have a more than 15 Characters.
-       - User should input a username, blank name is not allowed.
 
 
 ### Play game options

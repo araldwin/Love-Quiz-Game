@@ -2,44 +2,51 @@
 """
 get access to code from another module by
 importing the file/function using import.
+
+ - time sleep function is used to add delay in the execution of a program.
+ - sys used to manipulate different parts of the Python runtime environment.
+ - pyfiglet takes ASCII text and renders it in ASCII art fonts.
+ - termcolor module for Color formatting for output in the terminal.
+ -  make code in one module available in another.
 """
-import re
 import time
 import sys
 from pyfiglet import figlet_format
 from termcolor import colored
-from data import QUESTIONS
+from data import questions
 
 QUESTION_INDEX = 0
-SCORE = 0
-
-print()
-print('Welcome to:')
-
-ascii_art = figlet_format("Quiz Game")
-colored_ascii = colored(ascii_art, "yellow")
-print(colored_ascii)
-
-time.sleep(.1)
+PLAYER_SCORE = 0
 
 
 def initialize_game():
 
+    print()
+    print('Welcome to:')
+
+    ascii_art = figlet_format("Quiz Game")
+    colored_ascii = colored(ascii_art, "yellow")
+    print(colored_ascii)
+
+    time.sleep(.1)
+
     while True:
         name = input(colored("Please enter your username:\n", "green"))
-        if not re.match("^[a-z, A-Z, 0-9]*$", name):
-            print()
-            print(colored("Invalid username!"
-                          "No special characters allowed", "red"))
-        elif len(name) > 15:
-            print()
-            print(colored("Invalid! username too long!"
-                          "Only 15 characters allowed!", "red"))
-        elif name.strip() == '':
-            print(colored("Invalid username!"
-                          "You must enter [A-Z, 0-9]", "red"))
-        else:
+        if name.isalnum():
             break
+
+        if len(name) > 15:
+            print()
+            print(colored("Username too long! "
+                          "Only 15 characters allowed!", "red"))
+
+        print()
+        print(colored("Invalid username!\n"
+                      "Special characters are not allowed!(space)!#%&?.",
+                      "red"))
+        print()
+        print(colored("Enter alphanumeric username [A-Z, 0-9]", "green"))
+
     while True:
         time.sleep(.1)
         print()
@@ -112,8 +119,8 @@ def check_user_answer(answer, correct_answer):
     is correct answer
     """
     if answer is correct_answer:
-        global SCORE
-        SCORE += 1
+        global PLAYER_SCORE
+        PLAYER_SCORE += 1
         return True
     if answer != correct_answer:
         return False
@@ -130,7 +137,7 @@ def display_question_result(question_result, correct_answer):
         time.sleep(0.3)
         print(colored("Correct!", "blue"))
         time.sleep(.1)
-        print(colored(f"Your current score is {SCORE}.", "yellow"))
+        print(colored(f"Your current score is {PLAYER_SCORE}.", "yellow"))
     else:
         time.sleep(.1)
         print("--------------------------------------------------------------")
@@ -140,7 +147,7 @@ def display_question_result(question_result, correct_answer):
         print(colored(f"The correct answer is {correct_answer}.", "blue"))
         time.sleep(.1)
         print("--------------------------------------------------------------")
-        print(colored(f"Your current score is {SCORE}.", "yellow"))
+        print(colored(f"Your current score is {PLAYER_SCORE}.", "yellow"))
     global QUESTION_INDEX
     QUESTION_INDEX += 1
 
@@ -149,7 +156,7 @@ def check_and_display_final_score():
     """If all the question is answered
     display the total score of the user
     """
-    total_of_questions = len(QUESTIONS)
+    total_of_questions = len(questions)
     if QUESTION_INDEX == total_of_questions:
         time.sleep(.1)
         print("--------------------------------------------------------------")
@@ -161,7 +168,7 @@ def check_and_display_final_score():
         print()
         time.sleep(.1)
         print()
-        print(colored(f"Final score: {SCORE} / {total_of_questions}",
+        print(colored(f"Final score: {PLAYER_SCORE} / {total_of_questions}",
                       "yellow"))
         time.sleep(1.5)
         print()
@@ -177,8 +184,8 @@ def play_again():
     quiz_again = quiz_again.upper()
 
     if quiz_again == "YES":
-        global SCORE
-        SCORE = 0
+        global PLAYER_SCORE
+        PLAYER_SCORE = 0
         global QUESTION_INDEX
         QUESTION_INDEX = 0
         return True
@@ -189,7 +196,7 @@ def main():
     """
     Create loop for all the function above
     """
-    for question in QUESTIONS:
+    for question in questions:
         display_question(question)
         answer = ask_user_option()
         correct_answer = question["correct_option"]
