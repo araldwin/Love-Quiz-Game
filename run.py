@@ -86,7 +86,7 @@ def display_question(correct_question):
     time.sleep(.1)
     print("--------------------------------------------------------------")
     print()
-    print(f"Question {QUESTION_INDEX + 1}:")
+    print(correct_question["question_number"])
     print(correct_question["question"])
     print()
     time.sleep(.1)
@@ -122,6 +122,7 @@ def check_user_answer(answer, correct_answer):
     """Incrementing user score only if it
     is correct answer
     """
+
     if answer is correct_answer:
         global PLAYER_SCORE
         PLAYER_SCORE += 1
@@ -190,8 +191,6 @@ def play_again():
     if quiz_again == "YES":
         global PLAYER_SCORE
         PLAYER_SCORE = 0
-        global QUESTION_INDEX
-        QUESTION_INDEX = 0
         return True
     return None
 

@@ -90,8 +90,10 @@ As a user:
        <img src="docs/pqg-checkuseranswer.png">
        </details>
 
-       - when User answer is wrong, it will display a message "Incorrect", after that it will display the correct answer, and then display the User's current score.
-       - if the User answer is correct, it will display a message "Correct", and add +1 score to User's current score.
+       - when User answer is wrong, it will display a message "Incorrect", 
+         after that it will display the correct answer, and then display the User's current score.
+       - if the User answer is correct, it will display a message "Correct", 
+         and add +1 score to User's current score.
 
 ### End game options
 - <details>
@@ -99,7 +101,8 @@ As a user:
        <img src="docs/pqg-displayfs.png">
        </details>
 
-       - when User are finish answering all the question, it will display a message "Congratulations... Calculating total of score..." 
+       - when User are finish answering all the question, it will display a message "Congratulations...
+         Calculating total of score..." 
        - it will display Final Score of the User's all correct answers out of total lenght of questions.
 
 - <details>
@@ -217,6 +220,11 @@ Bugs
    
 -----
 ## Deployment
+- via gitpod
+   - go to and log in to [github](https://github.com/).
+   - after login. on the top right side of the page next to the bell icon click on the "+" and select "New repository".
+   - now i can create a new repository. put repository template, repository name, its description and other options, after that just go to the bottom and press "Create repository" and then it take me to gitpod.
+
 - via Heroku
      - go and log in to [Heroku]((https://id.heroku.com/login))
      - from the Heroku dashboard "Create new app".
