@@ -33,20 +33,19 @@ def initialize_game():
 
     while True:
         name = input(colored("Please enter your username:\n", "green"))
-        if name.isalnum():
-            break
-
-        if len(name) > 15:
+        if not name.isalnum() or len(name) > 15:
             print()
-            print(colored("Username too long! "
-                          "Only 15 characters allowed!", "red"))
+            print(colored("Invalid username!\n"
+                          "Special characters are not allowed!(space)!#%&?,",
+                          "red"))
+            print(colored("and maximum of 15 characters only.",
+                          "red"))
 
-        print()
-        print(colored("Invalid username!\n"
-                      "Special characters are not allowed!(space)!#%&?.",
-                      "red"))
-        print()
-        print(colored("Enter alphanumeric username [A-Z, 0-9]", "green"))
+            print()
+            print(colored("Enter alphanumeric username [A-Z, 0-9]", "green"))
+            print(colored("with maximum of 15 characters only", "green"))
+            continue
+        break
 
     while True:
         time.sleep(.1)
@@ -156,7 +155,6 @@ def check_and_display_final_score(player_score, total_of_questions):
     print()
     time.sleep(.1)
     print(colored("Calculating total of scores...", "green"))
-    print()
     time.sleep(.1)
     print()
     print(colored(f"Final score: {player_score} / {total_of_questions}",
@@ -173,6 +171,7 @@ def play_again():
     """
     quiz_again = input(colored("Type ONLY 'YES' to play again:\n", "green"))
     quiz_again = quiz_again.upper()
+    print()
 
     if quiz_again == "YES":
         return True
