@@ -14,6 +14,7 @@
 7. [Testing](#testing)
    - 7.1 Code Validation
    - 7.2 Fixed bugs
+   - 7.3 Test cases
 8. [Deployment](#deployment)
 9. [Credits](#credits)
 
@@ -171,7 +172,9 @@ As a user:
 - Windows Snipping Tool - Used to save the screen shot.
 
 -----
+
 ## Testing
+
 ### 7.1 Code Validation
 - <details>
        <summary>PEP8 Python Validator</summary>
@@ -179,6 +182,9 @@ As a user:
        
      - No Errors or Warnings found.
        </details>
+
+------
+
 ### 7.2 fixed bugs
 Bugs
 
@@ -216,6 +222,18 @@ Bugs
 
         <img src="docs/repeatgame_bugfixed.png" width="25%">
        </details>
+
+------
+
+### 7.3 Test Cases
+| Test<br>Case<br>ID | Test Case<br>Description | Test Steps | Test Data | Expected<br>Result | Actual<br>Result| Pass/Fail |
+| :---: | :---: | --- | --- |--- | :---: | :---: |
+| TC01 | Username input<br>Valid| 1. Go to site [https://love-quiz-game.herokuapp.com/](https://love-quiz-game.herokuapp.com/)<br>2. Type a username input<br>3. Press Enter | Username =<br>Aldwin | User should<br>proceed to start/exit option | As Expected | Pass<br><details> <summary>Test case 01 screen shot</summary> <img src="docs/tc01.png"> </details> |
+| TC02 | Username input<br>Invalid| 1. Go to site [https://love-quiz-game.herokuapp.com/](https://love-quiz-game.herokuapp.com/)<br>2. Type a username input<br>3. Press Enter | Username =<br>aldwin@codeinstitute | 1. User should not<br>proceed to start/exit option<br>2. User will be ask <br>Alpanumeric input | As Expected | Pass<br><details> <summary>Test case 02 screen shot</summary> <img src="docs/tc02.png"> </details> |
+| TC03 |  User main menu option<br>(start the game) | 1. Go to site [https://love-quiz-game.herokuapp.com/](https://love-quiz-game.herokuapp.com/)<br>2. Type a correct username input<br>3. Press Enter<br>4. Type Start<br>5. Press Enter | Type  = start | User should <br>proceed to<br>the Quiz first question | As Expected |Pass<br><details> <summary>Test case 03 screen shot</summary> <img src="docs/tc03.png"> </details> |
+| TC04 |  User main menu option<br>(Exit the game) | 1. Go to site [https://love-quiz-game.herokuapp.com/](https://love-quiz-game.herokuapp.com/)<br>2. Type a correct username input<br>3. Press Enter<br>4. Type Exit<br>5. Press Enter | Type = exit | User should <br>Exit the game | As Expected | Pass<br><details> <summary>Test case 04 screen shot</summary> <img src="docs/tc04.png"> </details> |
+| TC05 |  Check User Correct answer | 1. Go to site [https://love-quiz-game.herokuapp.com/](https://love-quiz-game.herokuapp.com/)<br>2. Type a correct username input<br>3. Press Enter<br>4. Type Start<br>5. Press Enter<br>6. Type the correct answer<br>7. Press Enter | Type = 2<br>(Correct answer<br>in Question number 1) | 1. Display Message Correct<br>2. Display user current score<br>3. User should proceed to<br>the next question | As Expected | Pass<br><details> <summary>Test case 05 screen shot</summary> <img src="docs/tc05.png"> </details> |
+| TC06 |  Check User Incorrect answer | 1. Continuing procedure from TC05<br>(Question number 2)<br>2. Type the Incorrect answer<br>3. Press Enter | Type = 3<br>(Incorrect answer<br>in Question number 2) | 1. Display message<br>answer is Incorrect<br>2. Display the Correct asnwer<br>3. Display user current score<br>4. User should proceed to<br>the next question | As Expected | Pass<br><details> <summary>Test case 06 screen shot</summary> <img src="docs/tc06.png"> </details> |
 
    
 -----
