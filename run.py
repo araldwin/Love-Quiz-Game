@@ -15,9 +15,6 @@ from pyfiglet import figlet_format
 from termcolor import colored
 from data import questions
 
-QUESTION_INDEX = 0
-PLAYER_SCORE = 0
-
 
 def initialize_game():
     """
@@ -124,8 +121,6 @@ def check_user_answer(answer, correct_answer):
     """
 
     if answer is correct_answer:
-        global PLAYER_SCORE
-        PLAYER_SCORE += 1
         return True
     if answer != correct_answer:
         return False
@@ -141,8 +136,6 @@ def display_question_result(question_result, correct_answer):
         print("--------------------------------------------------------------")
         time.sleep(0.3)
         print(colored("Correct!", "blue"))
-        time.sleep(.1)
-        print(colored(f"Your current score is {PLAYER_SCORE}.", "yellow"))
     else:
         time.sleep(.1)
         print("--------------------------------------------------------------")
@@ -150,35 +143,28 @@ def display_question_result(question_result, correct_answer):
         print("--------------------------------------------------------------")
         time.sleep(.1)
         print(colored(f"The correct answer is {correct_answer}.", "blue"))
-        time.sleep(.1)
-        print("--------------------------------------------------------------")
-        print(colored(f"Your current score is {PLAYER_SCORE}.", "yellow"))
-    global QUESTION_INDEX
-    QUESTION_INDEX += 1
 
 
-def check_and_display_final_score():
+def check_and_display_final_score(player_score, total_of_questions):
     """If all the question is answered
     display the total score of the user
     """
-    total_of_questions = len(questions)
-    if QUESTION_INDEX == total_of_questions:
-        time.sleep(.1)
-        print("--------------------------------------------------------------")
-        print()
-        print(colored("Congratulations!", "blue"))
-        print()
-        time.sleep(.1)
-        print(colored("Calculating total of scores...", "green"))
-        print()
-        time.sleep(.1)
-        print()
-        print(colored(f"Final score: {PLAYER_SCORE} / {total_of_questions}",
-                      "yellow"))
-        time.sleep(1.5)
-        print()
-        print("--------------------------------------------------------------")
-        print()
+    time.sleep(.1)
+    print("--------------------------------------------------------------")
+    print()
+    print(colored("Congratulations!", "blue"))
+    print()
+    time.sleep(.1)
+    print(colored("Calculating total of scores...", "green"))
+    print()
+    time.sleep(.1)
+    print()
+    print(colored(f"Final score: {player_score} / {total_of_questions}",
+                  "yellow"))
+    time.sleep(1.5)
+    print()
+    print("--------------------------------------------------------------")
+    print()
 
 
 def play_again():
@@ -189,23 +175,8 @@ def play_again():
     quiz_again = quiz_again.upper()
 
     if quiz_again == "YES":
-        global PLAYER_SCORE
-        PLAYER_SCORE = 0
         return True
     return None
-
-
-def main():
-    """
-    Create loop for all the function above
-    """
-    for question in questions:
-        display_question(question)
-        answer = ask_user_option()
-        correct_answer = question["correct_option"]
-        correct_incorrect = check_user_answer(answer, correct_answer)
-        display_question_result(correct_incorrect, correct_answer)
-        check_and_display_final_score()
 
 
 def repeat_game():
@@ -222,6 +193,35 @@ def repeat_game():
     print(colored("Exiting game...", "green"))
     time.sleep(.1)
     print()
+
+
+def main():
+    """
+    Create loop for all the function above
+    """
+    question_index = 0
+    player_score = 0
+    for question in questions:
+        display_question(question)
+        answer = ask_user_option()
+        correct_answer = question["correct_option"]
+        correct_incorrect = check_user_answer(answer, correct_answer)
+
+        display_question_result(correct_incorrect, correct_answer)
+
+        question_index += 1
+
+        if correct_incorrect is True:
+            player_score += 1
+        time.sleep(.1)
+        print("--------------------------------------------------------------")
+        print(colored(f"Your current score is {player_score}.", "yellow"))
+
+    total_of_questions = len(questions)
+    if question_index == total_of_questions:
+        check_and_display_final_score(player_score, total_of_questions)
+
+    player_score = 0
 
 
 if __name__ == '__main__':
