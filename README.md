@@ -215,7 +215,7 @@ Bugs
 - Score and question_index do not increment after each correct answer and question.
    - <details>
        <summary>To fix</summary>
-       - To solve the error, I mark the variable as ***global*** in your function definition.
+       - To solve the error, I mark the variable as ***global***.
 
       ------
 
@@ -230,7 +230,7 @@ Bugs
 - If User choose playing again , the incrementing of the question number and score continues where it should the score and question number back into zero.
    - <details>
        <summary>To fix</summary>
-       - To solve the error, I mark the variable as ***global*** in your function definition.
+       - To solve the error, I mark the variable as ***global***.
 
       ------
 
