@@ -161,13 +161,22 @@ As a user:
 ## Technology
 ### Languages used
 - [Python](https://www.python.org/)
+
+### Python Module/Package
+
+- [time](https://realpython.com/python-time-module/#:~:text=Python's%20time%20module%20provides%20a,the%20epoch%20called%20localtime()%20.&text=Notice%20that%20tm_isdst%3D0%20.,applicable%20for%20the%20given%20time.)
+- [sys](https://www.geeksforgeeks.org/python-sys-module/#:~:text=The%20sys%20module%20in%20Python,interact%20strongly%20with%20the%20interpreter.)
+- [termcolor](https://pypi.org/project/termcolor/)
+- [pyfiglet](https://www.geeksforgeeks.org/python-ascii-art-using-pyfiglet-module/) - ASCII art figlet_format used for Main menu banner Quiz Game.
+
 ### Others
-- [Termcolor](https://pypi.org/project/termcolor/) - Module used to achieve text color in Terminal.
-- [Lucidchart](https://www.lucidchart.com/) - Tools used to build a flowchart.
-- [Google Fonts](https://fonts.google.com) - Where i import and use font-style for this project.
 - [Git](http://gitscm.com) - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 - [Gitpod](https://gitpod.io) - IDE used to code the project.
 - [GitHub](https://github.com) - GitHub is used to store the project's code after being pushed from Git.
+- [Lucidchart](https://www.lucidchart.com/) - Tools used to build a flowchart.
+- [Pep8](http://pep8online.com/) - Use to validate code. 
+- [Pylint.org](https://pypi.org/project/pylint/) - Used to improve and correct my code.
+- [Termcolor](https://pypi.org/project/termcolor/) - Module used to achieve text color in Terminal.
 - Visual Studio Code for Windows - IDE used to code the project.
 - Windows Snipping Tool - Used to save the screen shot.
 
@@ -177,12 +186,17 @@ As a user:
 
 ### 7.1 Code Validation
 - <details>
-       <summary>PEP8 Python Validator</summary>
-       <img src="docs/pqg-pepeightvalidator.png" width="100%">
+       <summary>PEP8 Python Validation screen shot</summary>
+       <img src="docs/pep8validation.png">
        
-     - No Errors or Warnings found.
+     - **No Errors or Warnings found**.
        </details>
-
+       - <details>
+              <summary>Pylint Validation screen shot</summary>
+              <img src="docs/pylintvalidation.png">
+              
+       - **No Errors or Warnings found**.
+              </details>
 ------
 
 ### 7.2 fixed bugs
@@ -198,32 +212,44 @@ Bugs
        <img src="docs/username_bugfixed.png" width="50%">
        </details>
 
-- Score and questionindex do not increment after each correct answer and question.
+- Score and question_index do not increment after each correct answer and question.
    - <details>
        <summary>To fix</summary>
        - To solve the error, I mark the variable as ***global*** in your function definition.
 
       ------
 
-       <img src="docs/score_bugfixed.png" width="25%">
+       <img src="docs/score_bugfixed.png">
 
       ------
 
-       <img src="docs/questionindex_bugfixed.png" width="25%">
+       <img src="docs/questionindex_bugfixed.png">
        </details>
 
 
-- When playing again, the incrementing of the question number and score continues where it should the score and question number back into zero.
+- If User choose playing again , the incrementing of the question number and score continues where it should the score and question number back into zero.
    - <details>
        <summary>To fix</summary>
        - To solve the error, I mark the variable as ***global*** in your function definition.
 
       ------
 
-        <img src="docs/repeatgame_bugfixed.png" width="25%">
+        <img src="docs/repeatgame_bugfixed.png">
        </details>
 
-------
+- Creating global variables and global key gives me problem when checking it into pylint.<br>When it comes to pylint, pylint wants to avoid using global variable.<br>Avoid to use constant and modify the value that was declared outside of any function that are in all caps is the naming convention. since the constant should not change its value
+    - <details>
+       <summary>pylint error screen shot</summary>
+       <img src="docs/pylintglobalfixed.png">
+       </details>
+    - <details>
+        <summary>To fix</summary>
+        <img src="docs/pylinterrorfixed.png">
+        </details>
+
+        1. remove global variable QUESTION_INDEX and PLAYER_SCORE and reposition this inside main function as local variable.
+        2. reposition incrementing player_score, question_index and conditional statement inside main function.
+        3. add parameters player_score and total_of_question to check_and_display_final_score function.
 
 ### 7.3 Test Cases
 | Test<br>Case<br>ID | Test Case<br>Description | Test Steps | Test Data | Expected<br>Result | Actual<br>Result| Pass/Fail |
@@ -260,15 +286,18 @@ Bugs
      - the link will proceed and open our mock terminal.
 
 ## Credits
+   - [bobbyhadz.com](https://bobbyhadz.com/) - learning guide.
+   - [finxter](https://blog.finxter.com/how-to-install-termcolor-in-python/) - guide on how to install termcolor in Python.
+   - [freecodecamp.org](https://www.freecodecamp.org/) - learning guide.
+   - [geeksforgeeks.org](https://www.geeksforgeeks.org/) - learning guide.
+   - [peps.python.org](https://peps.python.org/pep-0008/) – style guide for Python code.
+   - [programiz.com](https://www.programiz.com/) - learning guide.
+   - [pypi.org](https://pypi.org/project/termcolor/) - guide on how to use termcolor module.
+   - [quiztriviagames.com](https://www.quiztriviagames.com/multiple-choice-trivia-questions/) - get my questions and answers.
+   - [realpython.com](https://realpython.com/python-pep8/) - guide for Python Code.
+   - [stackoverflow.com](https://stackoverflow.com/) - learning guide.
    - [W3C School](https://www.w3schools.com/) - for more knowledge that I learned.
-   - [freecodecamp.org/](https://www.freecodecamp.org/)
-   - [stackoverflow.com](https://stackoverflow.com/) - Learning guide.
-   - [programiz.com](https://www.programiz.com/) - 
-   - [PEP 8](https://peps.python.org/pep-0008/) – Style Guide for Python Code.
-   - [Youtube.com](https://www.youtube.com/) - For Python tutorials.
-   - [quiztriviagames.com](https://www.quiztriviagames.com/multiple-choice-trivia-questions/) - I get my questions and answers.
-   - [Finxter](https://blog.finxter.com/how-to-install-termcolor-in-python/) - Guide on how to install termcolor in Python.
-   - [pypi.org](https://pypi.org/project/termcolor/) - Guide on how to use termcolor module.
+   - [Youtube.com](https://www.youtube.com/) - for Python tutorials.
 ## Acknowledgements
    - @Mr. Rohit to my mentor
    - @Jay Rodriguez

@@ -7,7 +7,7 @@ importing the file/function using import.
  - sys used to manipulate different parts of the Python runtime environment.
  - pyfiglet takes ASCII text and renders it in ASCII art fonts.
  - termcolor module for Color formatting for output in the terminal.
- -  make code in one module available in another.
+ - make code in one module available in another.
 """
 import time
 import sys
@@ -115,8 +115,14 @@ def ask_user_option():
 
 
 def check_user_answer(answer, correct_answer):
-    """Incrementing user score only if it
-    is correct answer
+    """
+    conditional statement that returns
+    true if the user has a correct answer from the correct option library
+    and return false if its not
+
+    as per pylint:
+    R1710: Either all return statements in a function should return an expression, or none of them should.
+    thats why we return None at the end of the statemnt
     """
 
     if answer is correct_answer:
@@ -166,8 +172,10 @@ def check_and_display_final_score(player_score, total_of_questions):
 
 
 def play_again():
-    """Display a question to the user
-    if user wants to play again or end
+    """
+    creates variable and conditional statement
+    if user wants to play again the game
+    without exiting the program and run it again.
     """
     quiz_again = input(colored("Type ONLY 'YES' to play again:\n", "green"))
     quiz_again = quiz_again.upper()
@@ -197,6 +205,8 @@ def repeat_game():
 def main():
     """
     Create loop for all the function above
+    increment player score and question index
+    using local variable and conditional statement
     """
     question_index = 0
     player_score = 0
